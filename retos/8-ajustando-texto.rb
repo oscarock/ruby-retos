@@ -20,3 +20,4 @@ end
 adjust_text("", 3) #=> "   "
 adjust_text("Hola", 0) #=> ""
 adjust_text("Hola", 10) #=> "Hola      "
+adjust_text('Maker', 10) #=> "Maker     "
