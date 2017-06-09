@@ -1,3 +1,6 @@
+#crear un método longitud que encuentre la longitud de una cadena (string).
+
+####### mi solucion #######
 def longitud(str)
     str.length
 end

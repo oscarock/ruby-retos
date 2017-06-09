@@ -1,6 +1,7 @@
 # escribir un método que decida si una cadena de texto (string) es una placa de
 # un vehículo o no. Las placas de un vehículo se componen de tres letras
 # mayúsculas, seguidas de tres dígitos (p.e. AAA234, o UHJ765).
+# fuentes:http://lzone.de/examples/Ruby%20Regex
 
 ####### mi solucion #######
 def is_plate?(string)
