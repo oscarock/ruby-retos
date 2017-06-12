@@ -8,6 +8,7 @@
 def write(nombre_archivo,string)
     archivo = File.open(nombre_archivo, 'w')
     archivo.write "#{string}"
+    archivo.close
 end
 
 write("test.txt", "Hola mundo")
