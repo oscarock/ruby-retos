@@ -18,3 +18,12 @@ end
 array.each_with_index do |elem, 1| #iterar array
     puts "#{1} - #{elem}"
 end
+
+
+# nums = [1,2,3,4]
+# sum = 0
+
+
+
+
+# puts nums.reduce(0){|sum,num| sum += num}
