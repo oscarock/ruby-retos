@@ -6,7 +6,7 @@
 # Si el hash no tiene la llave :pressure, asignarle el valor de 500.
 
 ####### mi covinoc #######
-def defaults(hash = {})
+def defaults(hash)
     hash = { 23, altitude: 4500, pressure: 234}
 
     if hash.has_key?(:temperature) == false
