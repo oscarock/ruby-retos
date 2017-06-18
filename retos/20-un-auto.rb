@@ -1,3 +1,24 @@
+# escribir una clase llamada Car que se comporte como un auto 
+# simplificado que nos permita acelerar, frenar y obtener 
+# su velocidad actual.
+
+# car = Car.new
+# car.velocity # => 0
+
+# car.accelerate
+# car.velocity # => 1
+
+# car.accelerate(2)
+# car.velocity # => 3
+
+# car.brake
+# car.velocity # => 2
+
+# car.brake(2)
+# car.velocity # => 0
+
+# car.velocity = 100 # Debería fallar
+
 class Car 
     def initialize()
         @accelerate = 0
