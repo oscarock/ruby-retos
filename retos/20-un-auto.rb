@@ -19,6 +19,8 @@
 
 # car.velocity = 100 # Debería fallar
 
+
+########mi solucion########
 class Car 
     def initialize()
         @accelerate = 0

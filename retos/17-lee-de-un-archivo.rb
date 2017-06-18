@@ -4,14 +4,18 @@
 
 ########mi solucion########
 def read(nombre_archivo)
-    f = File.open("#{nombre_archivo}").each_line do |line|
-        puts line
-    end
-    # f = File.open("#{nombre_archivo}", "r")
-    # f.each_line do |line|
-    #     puts line
-    # end
-    # f.close
+	if File.file?(nombre_archivo)
+		f = File.open("#{nombre_archivo}").each_line do |line|
+        	p line
+    	end	
+	end
 end
 
 read('test.txt')
+
+######solucion plataforma#######
+
+# def read(file)
+#   File.read(file) if File.file?(file)
+#   # IO.read(file) también funciona
+# end
