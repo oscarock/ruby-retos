@@ -13,7 +13,9 @@ def adjust_text(str,num1)
     if str.length > num1
         p  str.slice(0,num1)
     else
-        p str << " " * num1
+        p str.length - num1
+        # result = str.length - num1
+        # p result << " " * num1
     end
 end
 

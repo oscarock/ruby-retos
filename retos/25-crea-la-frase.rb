@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # crear un método que reciba un arreglo y retorne una cadena que contenga una
 # frase con los elementos del arreglo.
 # La frase se debe componer siguiendo las reglas del idioma español:
@@ -14,8 +13,15 @@
 
 ####### mi solucion #######
 def phrase(array)
-	# p array[-2..-1].join(",")
-	p array.join(",")
+	# array.each do |elem|
+	# 	puts elem
+	# end
+	# p array.last(2)
+	if array.size > 2
+		p array.join(" ")
+	end
+
+	# p array.join(",")
 	# p array.last(2)
 	# p array.join(", ")
 	# if array.size >= 2
@@ -35,16 +41,7 @@ def phrase(array)
 end
 
 phrase(['uno', 'dos', 'tres']) # => "uno, dos y tres"
-phrase(['uno', 'dos']) # => "uno y dos"
+# phrase(['uno', 'dos', 'tres', 'cuatro']) # => "uno, dos y tres"
+# phrase(['uno', 'dos']) # => "uno y dos"
 # phrase(['uno']) # => "uno"
 # phrase([]) # => ""
-=======
-def phrase(array)
-	p array[1..2]
-
-	
-end
-
-phrase(['uno', 'dos'])
-s
->>>>>>> a61811a5e5660e7223dff88f3422ae1302744efa
