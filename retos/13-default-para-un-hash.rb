@@ -7,20 +7,22 @@
 
 ####### mi covinoc #######
 def defaults(hash)
-    hash = { 23, altitude: 4500, pressure: 234}
-
     if hash.has_key?(:temperature) == false
         hash[:temperature] = 10
     end
-    p hash
-    # puts hash.has_key?(:temperature)
-
-    # hash = {:altitude => 4500, :pressure => 234}
-    # puts hash = {altitude: 4500, pressure: 234}
-    # if hash.has_key?(:temperature)
-    #     hash[:temperature] = 10
-    # end
-
+    if hash.has_key?(:pressure) == false
+        hash[:pressure] = 500
+    end
+    if hash.has_key?(:altitude) == false
+        hash[:altitude] = 12000
+    end
+    return hash
 end
 
-defaults()
+p defaults({:temperature => 25, :pressure => 234, :altitude => 4500})
+
+
+####### solucion plataforma #######
+def defaults(hash)
+  { temperature: 10, altitude: 12000, pressure: 500 }.merge(hash)
+end
