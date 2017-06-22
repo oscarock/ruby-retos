@@ -5,7 +5,7 @@
 # Si el hash no tiene la llave :altitude, asignarle el valor de 12000.
 # Si el hash no tiene la llave :pressure, asignarle el valor de 500.
 
-####### mi covinoc #######
+####### mi solucion #######
 def defaults(hash)
     if hash.has_key?(:temperature) == false
         hash[:temperature] = 10
