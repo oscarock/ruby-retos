@@ -13,35 +13,27 @@
 
 ####### mi solucion #######
 def phrase(array)
-	# array.each do |elem|
-	# 	puts elem
-	# end
-	# p array.last(2)
-	if array.size > 2
-		p array.join(" ")
+	if array.size >=2
+		new_array = array.slice!(-1)
+		p array.join(", ") + " y " + new_array
+	else
+		p array.join(", ")
 	end
+end
 
-	# p array.join(",")
-	# p array.last(2)
-	# p array.join(", ")
-	# if array.size >= 2
-	# 	ok = array[-2..-1].join(",")
-	# 	p ok.gsub(",", "y")
-	# else
-	# 	p array
-	# end
 
-	# if array.size > 2
-	# 	p array[-2..-1]
-	# 	#puts "mas de 2"
-	# else
-	# 	p array
-	# 	puts "menos de 2"
-	# end
+####### solucion plataforma #######
+def phrase(arr)
+  if arr.length == 0
+    return ""
+  elsif arr.length == 1
+    return arr[0]
+  else
+    return "#{arr[0...-1].join(', ')} y #{arr[-1]}"
+  end
 end
 
 phrase(['uno', 'dos', 'tres']) # => "uno, dos y tres"
-# phrase(['uno', 'dos', 'tres', 'cuatro']) # => "uno, dos y tres"
-# phrase(['uno', 'dos']) # => "uno y dos"
-# phrase(['uno']) # => "uno"
-# phrase([]) # => ""
+phrase(['uno', 'dos']) # => "uno y dos"
+phrase(['uno']) # => "uno"
+phrase([]) # => ""
