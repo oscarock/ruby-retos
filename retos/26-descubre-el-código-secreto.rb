@@ -15,6 +15,7 @@
 ####### mi solucion #######
 def secret_code(string)
     p string.to_i
+    p string.gsub('one', 1.to_s)
     # string.each_char do |c|
     #     print c
     # end
