@@ -7,7 +7,8 @@
 ####### mi solucion #######
 class String
     def palindrome?
-        self == self.reverse
+        letters = self.downcase.scan(/\w/)
+        letters == letters.reverse
     end
 end
 
