@@ -25,3 +25,28 @@
 # 2,Lavar ropa,false
 
 ####### mi solucion #######
+def load_tasks(nombre_archivo)
+    if File.file?(nombre_archivo) || File.zero?(nombre_archivo)
+        File.open(nombre_archivo, 'r') do |f1|
+            while linea = f1.gets
+                array = linea.split(",")
+                p new_hash = [{ id: array[0], name: array[1], done: array[2] }]
+
+                # p array.push(new_hash)
+                # p new_hash
+                #  p array[0]
+            end
+        end
+    else
+        return []
+    end
+end
+
+def save_tasks(nombre_archivo, hash)
+    archivo = File.open(nombre_archivo, 'w')
+    archivo.write "#{hash[:id]},#{hash[:name]},#{hash[:done]}"
+    archivo.close
+end
+
+# save_tasks('test.txt',{id: 1, name: "Hacer tareas", done: true})
+load_tasks('test.txt')
