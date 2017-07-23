@@ -26,16 +26,19 @@
 
 ####### mi solucion #######
 def load_tasks(nombre_archivo)
+    array = nil
+    
     if File.file?(nombre_archivo) || File.zero?(nombre_archivo)
-        File.open(nombre_archivo, 'r') do |f1|
-            while linea = f1.gets
-                array = linea.split(",")
-                p new_hash = [{ id: array[0], name: array[1], done: array[2] }]
+        File.open(nombre_archivo).each_line do |linea|
+            array = []
+            p array << linea
+            # p new_array << linea
 
-                # p array.push(new_hash)
-                # p new_hash
-                #  p array[0]
-            end
+            # p hash_new << {id: array[0]}
+            
+            # p new_array << new_hash = [{ id: array[0], name: array[1], done: array[2] }]
+
+           
         end
     else
         return []
