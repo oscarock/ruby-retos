@@ -58,6 +58,7 @@ save_task('test.txt', [
     { id: 1, name: "Hacer tareas", done: true },
     { id: 2, name: "Lavar ropa", done: false }
 ])
+
 # # Forma sencilla
 # def save_task(file, tareas)
 #   File.open(file, 'w+') do |file|
