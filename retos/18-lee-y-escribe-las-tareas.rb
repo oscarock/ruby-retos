@@ -25,28 +25,88 @@
 # 2,Lavar ropa,false
 
 ####### mi solucion #######
-def load_tasks(nombre_archivo)
-    if File.file?(nombre_archivo) || File.zero?(nombre_archivo)
-        File.open(nombre_archivo, 'r') do |f1|
-            while linea = f1.gets
-                array = linea.split(",")
-                p new_hash = [{ id: array[0], name: array[1], done: array[2] }]
-
-                # p array.push(new_hash)
-                # p new_hash
-                #  p array[0]
-            end
-        end
-    else
-        return []
+def load_task(file)
+  tareas = []
+  if File.exists?(file)
+    file = File.open(file, 'r')
+    File.open(file, 'r') do |file|
+      file.each do |line|
+        line = line.split(',').map(&:strip)
+        tareas << {id: line[0].to_i, name: line[1], done: line[2] == 'true'}
+      end
     end
+    tareas
+  else
+    tareas
+  end
 end
 
-def save_tasks(nombre_archivo, hash)
-    archivo = File.open(nombre_archivo, 'w')
-    archivo.write "#{hash[:id]},#{hash[:name]},#{hash[:done]}"
-    archivo.close
+def save_task(file, tareas)
+  File.open(file, 'w+') do |file|
+    tareas.each do |tarea|
+      line = []
+      tarea.each do |key, value|
+        line << value
+      end
+      file.puts line.join(',')
+    end
+  end
 end
 
-# save_tasks('test.txt',{id: 1, name: "Hacer tareas", done: true})
-load_tasks('test.txt')
+# p load_task('test.txt')
+save_task('test.txt', [
+    { id: 1, name: "Hacer tareas", done: true },
+    { id: 2, name: "Lavar ropa", done: false }
+])
+# # Forma sencilla
+# def save_task(file, tareas)
+#   File.open(file, 'w+') do |file|
+#     tareas.each do |tarea|
+#       file.puts "#{tarea[:id]},#{tarea[:name]},#{tarea[:done]}"
+#     end
+#   end
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def load_tasks(nombre_archivo)
+#     if File.file?(nombre_archivo) || File.zero?(nombre_archivo)
+#         File.open(nombre_archivo, 'r') do |f1|
+#             while linea = f1.gets
+#                 array = linea.split(",")
+#                 p new_hash = [{ id: array[0], name: array[1], done: array[2] }]
+#
+#                 # p array.push(new_hash)
+#                 # p new_hash
+#                 #  p array[0]
+#             end
+#         end
+#     else
+#         return []
+#     end
+# end
+#
+# def save_tasks(nombre_archivo, hash)
+#     archivo = File.open(nombre_archivo, 'w')
+#     archivo.write "#{hash[:id]},#{hash[:name]},#{hash[:done]}"
+#     archivo.close
+# end
+#
+# # save_tasks('test.txt',{id: 1, name: "Hacer tareas", done: true})
+# load_tasks('test.txt')
